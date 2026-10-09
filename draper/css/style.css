@@ -1,0 +1,365 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: #000;
+  color: #f5f2ec;
+  font-family: "Jost", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: min(1080px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* Hero: photo fills the frame, text sits on the dark left. */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 42%;
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #000 0%, #000 34%, rgba(0, 0, 0, 0.72) 52%, rgba(0, 0, 0, 0.28) 74%, rgba(0, 0, 0, 0.45) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 22%, transparent 72%, #000 100%);
+}
+
+.hero__copy {
+  position: relative;
+  z-index: 1;
+  width: min(640px, calc(100% - 64px));
+  margin-left: clamp(28px, 7vw, 96px);
+  padding-block: 72px;
+}
+
+.hero__brand {
+  margin: 0 0 22px;
+  font-family: "Libre Baskerville", Baskerville, Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #f5f2ec;
+}
+
+.hero__slogan {
+  margin: 0;
+  max-width: 11em;
+  font-family: "Libre Baskerville", Baskerville, Georgia, serif;
+  font-size: clamp(2.35rem, 4.6vw, 4.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #f7f4ee;
+}
+
+.hero__offer {
+  margin: 28px 0 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #f5f2ec;
+}
+
+.hero__fact {
+  margin: 8px 0 0;
+  font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+  font-weight: 500;
+  color: #e7c39a;
+}
+
+.hero__call {
+  margin-top: 36px;
+  min-height: 64px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: #c4844a;
+  color: #1a1008;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 16px 40px rgba(196, 132, 74, 0.28);
+}
+
+.hero__call span {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero__call:hover {
+  background: #d39258;
+}
+
+.hero__call:focus-visible {
+  outline: 2px solid #f5f2ec;
+  outline-offset: 4px;
+}
+
+.hero__area {
+  margin: 18px 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 236, 0.72);
+}
+
+/* Below the fold */
+
+.band {
+  padding-block: clamp(72px, 10vh, 120px);
+  background: #000;
+}
+
+.band--line {
+  border-top: 1px solid rgba(245, 242, 236, 0.12);
+  border-bottom: 1px solid rgba(245, 242, 236, 0.12);
+}
+
+.kicker {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c4844a;
+}
+
+.band__head h2,
+.steps h2 {
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 400;
+  color: #f5f2ec;
+}
+
+.band__head h2 {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  line-height: 1.15;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  padding-top: 8px;
+  border-top: 1px solid rgba(245, 242, 236, 0.16);
+}
+
+.steps span {
+  display: block;
+  margin: 22px 0 18px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #c4844a;
+}
+
+.steps h2 {
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+.steps p,
+.reviews blockquote,
+.prices span,
+.foot p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(245, 242, 236, 0.78);
+}
+
+.prices {
+  display: grid;
+  gap: 0;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prices li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(245, 242, 236, 0.12);
+}
+
+.prices li:first-child {
+  border-top: 1px solid rgba(245, 242, 236, 0.12);
+}
+
+.prices span {
+  font-size: 1.2rem;
+  color: #f5f2ec;
+}
+
+.prices strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e7c39a;
+  white-space: nowrap;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.reviews figure {
+  margin: 0;
+  padding: 28px 24px;
+  border: 1px solid rgba(245, 242, 236, 0.12);
+}
+
+.reviews blockquote {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #f5f2ec;
+}
+
+.reviews figcaption {
+  margin-top: 22px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 236, 0.55);
+}
+
+.foot {
+  padding: 36px 0 28px;
+  border-top: 1px solid rgba(245, 242, 236, 0.12);
+}
+
+.foot__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.foot__brand {
+  margin: 0;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #f5f2ec;
+}
+
+.foot a {
+  color: #f5f2ec;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dock {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .hero__veil {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 38%, #000 78%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2));
+  }
+
+  .hero__bg {
+    object-position: center 30%;
+  }
+
+  .hero__copy {
+    width: min(100% - 40px, 640px);
+    margin-left: 20px;
+    align-self: end;
+    padding-bottom: 108px;
+  }
+
+  .steps,
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .foot__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dock {
+    position: fixed;
+    z-index: 20;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    border-radius: 16px;
+    background: #c4844a;
+    color: #1a1008;
+    text-decoration: none;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .dock span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dock strong {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .foot {
+    padding-bottom: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
